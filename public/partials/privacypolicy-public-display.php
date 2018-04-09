@@ -27,9 +27,7 @@ ob_start(); ?>
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="privacy-naw">
     <h1>Privacybeleid</h1>
-    <span><?php echo $bedrijfsnaam; ?></span><br>
-    <span><?php echo $domeinnaam; ?></span><br>
-    <span><?php echo $datum_aanmaken; ?></span><br><br>
+    <p><?php echo $bedrijfsnaam; ?>, gevestigd op <?php echo $beheerder_adres; ?>, <?php echo $beheerder_postcode; ?> te <?php echo $beheerder_plaats; ?><?php if ( $beheerder_kvk != '' ) : ?> en geregistreerd bij de Kamer van Koophandel onder het nummer <?php echo $beheerder_kvk; ?><?php endif; ?>.</p>
 </div>
 
 <div class="privacy-intro">
