@@ -16,7 +16,7 @@
  * Plugin Name:       Privacy Policy door Webreact
  * Plugin URI:        https://webreact.nl
  * Description:       Genereer een Nederlands privacy beleid gebaseerd op bedrijfsinformatie.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Nils Ringersma
  * Author URI:        https://github.com/nilsringersma
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'PLUGIN_NAME_VERSION', '1.1.0' );
 
 /**
  * The code that runs during plugin activation.
