@@ -80,3 +80,17 @@ function run_privacypolicy() {
 
 }
 run_privacypolicy();
+
+/**
+ * Update the plugin via GitHub.
+ *
+ * @since    1.0.0
+ */
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/webreact/privacypolicy/',
+    __FILE__,
+    'privacypolicy'
+);
+//Optional: If you're using a private repository, specify the access token like this:
+//$myUpdateChecker->setAuthentication('');
