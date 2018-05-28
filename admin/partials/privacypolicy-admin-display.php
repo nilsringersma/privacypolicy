@@ -216,6 +216,214 @@
 
         <hr>
 
+        <h2>Order bevestigingen</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Exact:</td>
+                <td>
+                    <input name="integratie_orderbevestiging_exact" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_orderbevestiging_exact' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Moneybird:</td>
+                <td>
+                    <input name="integratie_orderbevestiging_moneybird" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_orderbevestiging_moneybird' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">FactuurSturen:</td>
+                <td>
+                    <input name="integratie_orderbevestiging_factuursturen" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_orderbevestiging_factuursturen' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Gripp:</td>
+                <td>
+                    <input name="integratie_orderbevestiging_gripp" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_orderbevestiging_gripp' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Woocommerce:</td>
+                <td>
+                    <input name="integratie_orderbevestiging_woocommerce" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_orderbevestiging_woocommerce' ) ); ?> />
+                </td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <h2>Bedrijfsmail</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Gmail en Gsuite:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_gmail" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_gmail' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Hotmail:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_hotmail" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_hotmail' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Office 365:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_office365" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_office365' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Webreact:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_webreact" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_webreact' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Hostnet Shared:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_hostnet" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_hostnet' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Anders:</td>
+                <td>
+                    <input name="integratie_bedrijfsmail_anders" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_bedrijfsmail_anders' ) ); ?> />
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Customer Reviews</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Kiyoh:</td>
+                <td>
+                    <input name="integratie_review_kiyoh" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_review_kiyoh' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Feedbackcompany:</td>
+                <td>
+                    <input name="integratie_review_feedbackcompany" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_review_feedbackcompany' ) ); ?> />
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Payment Provider</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Mollie:</td>
+                <td>
+                    <input name="integratie_paymentprovider_mollie" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_paymentprovider_mollie' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Paynl:</td>
+                <td>
+                    <input name="integratie_paymentprovider_paynl" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_paymentprovider_paynl' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Klarna:</td>
+                <td>
+                    <input name="integratie_paymentprovider_klarna" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_paymentprovider_klarna' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Multisafepay:</td>
+                <td>
+                    <input name="integratie_paymentprovider_multisafepay" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_paymentprovider_multisafepay' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Afteray:</td>
+                <td>
+                    <input name="integratie_paymentprovider_afterpay" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_paymentprovider_afterpay' ) ); ?> />
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Verzenddienst</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Postnl:</td>
+                <td>
+                    <input name="integratie_verzenddienst_postnl" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_verzenddienst_postnl' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">DHL:</td>
+                <td>
+                    <input name="integratie_verzenddienst_dhl" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_verzenddienst_dhl' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">GLS:</td>
+                <td>
+                    <input name="integratie_verzenddienst_gls" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_verzenddienst_gls' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Anders:</td>
+                <td>
+                    <input name="integratie_verzenddienst_anders" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_verzenddienst_anders' ) ); ?> />
+                </td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <h2>Externe verkoop</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Bol.com:</td>
+                <td>
+                    <input name="integratie_externverkoop_bol" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_externverkoop_bol' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Marktplaats:</td>
+                <td>
+                    <input name="integratie_externverkoop_marktplaats" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_externverkoop_marktplaats' ) ); ?> />
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td scope="row">Beslist:</td>
+                <td>
+                    <input name="integratie_externverkoop_beslist" type="checkbox" value="1" <?php checked( '1', get_option( 'integratie_externverkoop_beslist' ) ); ?> />
+                </td>
+            </tr>
+
+        </table>
+
+        <hr>
+
         <h2>Gebruik van cookies</h2>
         <table class="form-table">
             <tr valign="top">
@@ -243,6 +451,17 @@
                 <td scope="row">Social Media sharing:</td>
                 <td>
                     <input name="cookies_socialmedia" type="checkbox" value="1" <?php checked( '1', get_option( 'cookies_socialmedia' ) ); ?> />
+                </td>
+            </tr>
+
+        </table>
+
+        <h2>Algemene instellingen</h2>
+        <table class="form-table">
+            <tr valign="top">
+                <td scope="row">Toon formulier titel:</td>
+                <td>
+                    <input name="show_form_title" type="checkbox" value="1" <?php checked( '1', get_option( 'show_form_title' ) ); ?> />
                 </td>
             </tr>
 

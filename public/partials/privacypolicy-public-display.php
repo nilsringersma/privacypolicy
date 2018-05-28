@@ -22,16 +22,40 @@ $beheerder_postcode = get_option('beheerder_postcode');
 $beheerder_plaats   = get_option('beheerder_plaats');
 $beheerder_kvk      = get_option('beheerder_kvk');
 
+switch ('1') {
+
+    case (get_option('integratie_bedrijfsmail_gmail')) :
+        $emailprovider = 'Gmail';
+        break;
+    case (get_option('integratie_bedrijfsmail_hotmail')) :
+        $emailprovider = 'Hotmail';
+        break;
+    case (get_option('integratie_bedrijfsmail_office365')) :
+        $emailprovider = 'Office 365';
+        break;
+    case (get_option('integratie_bedrijfsmail_webreact')) :
+        $emailprovider = 'Webreact';
+        break;
+    case (get_option('integratie_bedrijfsmail_hostnet')) :
+        $emailprovider = 'Hostnet';
+        break;
+    case (get_option('integratie_bedrijfsmail_anders')) :
+        $emailprovider = 'Anders';
+        break;
+}
+
 ob_start(); ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="privacy-naw">
-    <h1>Privacybeleid</h1>
+    <?php if ( get_option('show_form_title') == '1' ) :?><h1>Privacybeleid</h1><?php endif; ?>
     <p><?php echo $bedrijfsnaam; ?>, gevestigd op <?php echo $beheerder_adres; ?>, <?php echo $beheerder_postcode; ?> te <?php echo $beheerder_plaats; ?><?php if ( $beheerder_kvk != '' ) : ?> en geregistreerd bij de Kamer van Koophandel onder het nummer <?php echo $beheerder_kvk; ?><?php endif; ?>.</p>
 </div>
 
 <div class="privacy-intro">
     <p>Wij respecteren de privacy van onze gebruikers. Wij verwerken persoonsgegevens alleen voor het doel waarvoor ze zijn verstrekt en in overeenstemming met de Wet Bescherming Persoonsgegevens, de Telecommunicatiewet en de AVG ( GDPR ).</p>
+
+    <p>Dit privacybeleid is van toepassing op het gebruik van de website en de daarop ontsloten dienstverlening van <?php echo $bedrijfsnaam; ?>. De ingangsdatum voor de geldigheid van deze voorwaarden is 28/05/2018, met het publiceren van een nieuwe versie vervalt de geldigheid van alle voorgaande versies. Dit privacybeleid beschrijft welke gegevens over u door ons worden verzameld, waar deze gegevens voor worden gebruikt en met wie en onder welke voorwaarden deze gegevens eventueel met derden kunnen worden gedeeld. Ook leggen wij aan u uit op welke wijze wij uw gegevens opslaan en hoe wij uw gegevens tegen misbruik beschermen en welke rechten u heeft met betrekking tot de door u aan ons verstrekte persoonsgegevens.</p>
 </div>
 
 <div class="privacy-wie">
@@ -62,6 +86,7 @@ ob_start(); ?>
         <?php if ( get_option('opslag_ipadres') == '1' ) :?><li>IP-adres</li><?php endif; ?>
         <?php if ( get_option('opslag_gebruikersnaam') == '1' ) :?><li>Gebruikersnaam</li><?php endif; ?>
     </ul>
+    <p>Gegevens die automatisch worden verzameld door onze website worden verwerkt met het doel onze dienstverlening verder te verbeteren. Deze gegevens (bijvoorbeeld uw IP-adres, webbrowser en besturingssysteem) zijn geen persoonsgegevens.</p>
 </div>
 
 <div class="privacy-waarom">
@@ -79,8 +104,161 @@ ob_start(); ?>
 
 <div class="privacy-metwie">
     <h2>Met wie delen we je persoonsgegevens?</h2>
-    <p>Je persoonsgegevens worden opgeslagen op servers van <a href="https://hostnet.nl">Hostnet B.V.</a>.<br>
-        De servers van Hostnet B.V. zijn gevestigd in Nederland. Jouw gegevens kunnen dus worden opgeslagen en verwerkt in Nederland. Meer informatie over het privacybeleid van Hostnet B.V. vind je <a href="https://www.hostnet.nl/over-hostnet/privacy-en-cookieverklaring">hier</a>. </p>
+    <p>Onze website is ontwikkeld met software van WordPress, wij hebben voor onze webhosting gekozen voor Hostnet. Persoonsgegevens die u ten behoeve van onze dienstverlening aan ons beschikbaar stelt, worden met deze partij gedeeld. Hostnet heeft toegang tot uw gegevens om ons (technische) ondersteuning te bieden, zij zullen uw gegevens nooit gebruiken voor een ander doel. Hostnet is op basis van de overeenkomst die wij met hen hebben gesloten verplicht om passende beveiligingsmaatregelen te nemen. Deze beveiligingsmaatregelen bestaan uit de toepassing van SSL-encryptie en een sterk wachtwoordbeleid. Er worden regelmatig back-ups gemaakt om verlies van data te voorkomen. Meer informatie over het privacybeleid van Hostnet B.V. vind je <a href="https://www.hostnet.nl/over-hostnet/privacy-en-cookieverklaring">hier</a>.</p>
+    <br><p>In voorkomende gevallen kan <?php echo $bedrijfsnaam; ?> op grond van een wettelijke verplichting worden gehouden tot het delen van uw gegevens in verband met fiscaal of strafrechtelijk onderzoek van overheidswege. In een dergelijk geval zijn wij gedwongen uw gegevens te delen, maar wij zullen ons binnen de mogelijkheden die de wet ons biedt daartegen verzetten.</p>
+</div>
+
+<?php if ( get_option('reden_nieuwsbrief') == '1' ) :?>
+    <div class="privacy-metwie">
+
+        <h2>Mailchimp & Mailing</h2>
+        <p>Onze website maakt gebruik van MailChimp, een derde partij die het e-mailverkeer afkomstig van onze website en het verzenden van eventuele nieuwsbrieven afhandelt. Sommige bevestigingsmails die u ontvangt van onze website en webformulieren worden verzonden via de servers van MailChimp. MailChimp zal uw naam en e-mailadres nooit voor eigen doeleinden gebruiken. Onderaan elke e-mail die geautomatiseerd via onze website is verzonden ziet u de ‘unsubscribe’ link. Als u hier op klikt zal u geen e-mail meer van onze website ontvangen. Dit kan de functionaliteit van onze website ernstig verminderen! Uw persoonsgegevens worden door MailChimp beveiligd opgeslagen. MailChimp maakt gebruik van cookies en andere internettechnologieën die inzichtelijk maken of e-mails worden geopend en gelezen. MailChimp behoudt zich het recht voor om uw gegevens te gebruiken voor het verder verbeteren van de dienstverlening en in het kader daarvan informatie met derden te delen.</p>
+
+        <p>Wij maken voor ons reguliere zakelijke e-mailverkeer gebruik van de diensten van <?php echo $emailprovider?>. Deze partij heeft passende
+            technische en organisatorische maatregelen getroffen om misbruik, verlies en corruptie van uw en onze gegevens
+            zoveel mogelijk te voorkomen. heeft geen toegang tot ons postvak en wij behandelen al ons e-mailverkeer
+            vertrouwelijk.</p>
+
+    </div>
+<?php endif; ?>
+
+<div class="payment-providers">
+
+    <?php if ( get_option('integratie_paymentprovider_mollie') == '1' ) :?>
+        <div>
+            <h3>Mollie</h3>
+            <p>Voor het afhandelen van een (deel van) de betalingen in onze webwinkel maken wij gebruik van het platform van Mollie. Mollie verwerkt uw naam, adres en woonplaatsgegevens en uw betaalgegevens zoals uw bankrekening- of creditcardnummer. Mollie heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beschermen. Mollie behoudt zich het recht voor uw gegevens te gebruiken om de dienstverlening verder te verbeteren en in het kader daarvan (geanonimiseerde) gegevens met derden te delen. Alle hierboven genoemde waarborgen met betrekking tot de bescherming van uw persoonsgegevens zijn eveneens van toepassing op de onderdelen van Mollie’s dienstverlening waarvoor zij derden inschakelen. Mollie bewaart uw gegevens niet langer dan op grond van de wettelijke termijnen is toegestaan</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_paymentprovider_paynl') == '1' ) :?>
+        <div>
+            <h3>PayNL</h3>
+            <p></p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_paymentprovider_klarna') == '1' ) :?>
+        <div>
+            <h3>Klarna</h3>
+            <p></p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_paymentprovider_multisafepay') == '1' ) :?>
+        <div>
+            <h3>MultisafePay</h3>
+            <p>Voor het afhandelen van een (deel van) de betalingen in onze webwinkel maken wij gebruik van het platform van MultiSafepay. MultiSafepay verwerkt uw naam, adres en woonplaatsgegevens en uw betaalgegevens zoals uw bankrekening- of creditcardnummer. MultiSafepay heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beschermen. MultiSafepay behoudt zich het recht voor uw gegevens te gebruiken om de dienstverlening verder te verbeteren en in het kader daarvan (geanonimiseerde) gegevens met derden te delen. Alle hierboven genoemde waarborgen met betrekking tot de bescherming van uw persoonsgegevens zijn eveneens van toepassing op de onderdelen van MultiSafepay’s dienstverlening waarvoor zij derden inschakelen. MultiSafepay bewaart uw gegevens niet langer dan op grond van de wettelijke termijnen is toegestaan.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_paymentprovider_afterpay') == '1' ) :?>
+        <div>
+            <h3>Afterpay</h3>
+            <p>Voor het afhandelen van een (deel van) de betalingen in onze webwinkel maken wij gebruik van het platform van Afterpay. Afterpay verwerkt uw naam, adres en woonplaatsgegevens en uw betaalgegevens zoals uw bankrekening- of creditcardnummer. Afterpay heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beschermen. Afterpay behoudt zich het recht voor uw gegevens te gebruiken om de dienstverlening verder te verbeteren en in het kader daarvan (geanonimiseerde) gegevens met derden te delen. Alle hierboven genoemde waarborgen met betrekking tot de bescherming van uw persoonsgegevens zijn eveneens van toepassing op de onderdelen van Afterpay’s dienstverlening waarvoor zij derden inschakelen. Afterpay bewaart uw gegevens niet langer dan op grond van de wettelijke termijnen is toegestaan</p>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<div class="feedback">
+
+    <?php if ( get_option('integratie_review_kiyoh') == '1' ) :?>
+        <div>
+            <h3>Kiyoh</h3>
+            <p>Wij verzamelen reviews via het platform van Kiyoh. Als u een review achterlaat via Kiyoh dan bent u verplicht om uw naam, woonplaats en e-mailadres op te geven. Kiyoh deelt deze gegevens met ons, zodat wij de review aan uw bestelling kunnen koppelen. Kiyoh publiceert uw naam en woonplaats eveneens op de eigen website. In sommige gevallen kan Kiyoh contact met u opnemen om een toelichting op uw review te geven. In het geval dat wij u uitnodigen om een review achter te laten delen wij uw naam en e-mailadres met Kiyoh. Zij gebruiken deze gegevens enkel met het doel u uit te nodigen om een review achter te laten. Kiyoh heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beschermen. Kiyoh behoudt zich het recht voor om ten behoeve van het leveren van de dienstverlening derden in te schakelen, hiervoor hebben wij aan Kiyoh toestemming gegeven. Alle hierboven genoemde waarborgen met betrekking tot de bescherming van uw persoonsgegevens zijn eveneens van toepassing op de onderdelen van Kiyoh’s dienstverlening waarvoor zij derden inschakelen. Kiyoh bewaart uw persoonsgegevens zolang u de review op het platform gepubliceerd houdt. Kiyoh heeft een Functionaris Gegevensbescherming aangesteld, u vindt de contactgegevens van deze functionaris op de website van Kiyoh</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_review_feedbackcompany') == '1' ) :?>
+        <div>
+            <h3>Feedback Company</h3>
+            <p>Wij verzamelen reviews via het platform van Feedback Company. Als u een review achterlaat via Feedback Company dan bent u verplicht om uw naam, woonplaats en e-mailadres op te geven. Feedback Company deelt deze gegevens met ons, zodat wij de review aan uw bestelling kunnen koppelen. Feedback Company publiceert uw naam en woonplaats eveneens op de eigen website. In sommige gevallen kan Feedback Company contact met u opnemen om een toelichting op uw review te geven. In het geval dat wij u uitnodigen om een review achter te laten delen wij uw naam en e-mailadres en informatie met betrekking tot uw order met Feedback Company. Zij gebruiken deze gegevens enkel met het doel u uit te nodigen om een review achter te laten. Feedback Company heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beschermen. Feedback Company behoudt zich het recht voor om ten behoeve van het leveren van de dienstverlening derden in te schakelen, hiervoor hebben wij aan Feedback Company toestemming gegeven. Alle hierboven genoemde waarborgen met betrekking tot de bescherming van uw persoonsgegevens zijn eveneens van toepassing op de onderdelen van de dienstverlening waarvoor Feedback Company derden inschakelt.</p>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<div class="verzending">
+
+    <?php if ( get_option('integratie_verzenddienst_postnl') == '1' ) :?>
+        <div>
+            <h3>PostNL</h3>
+            <p>Als u een bestelling bij ons plaatst is het onze taak om uw pakket bij u te laten bezorgen. Wij maken gebruik van de diensten van PostNL voor het uitvoeren van de leveringen. Het is daarvoor noodzakelijk dat wij uw naam, adres en woonplaatsgegevens met PostNL delen. PostNL gebruikt deze gegevens alleen ten behoeve van het uitvoeren van de overeenkomst. In het geval dat PostNL onderaannemers inschakelt, stelt PostNL uw gegevens ook aan deze partijen ter beschikking.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_verzenddienst_dhl') == '1' ) :?>
+        <div>
+            <h3>DHL</h3>
+            <p>Als u een bestelling bij ons plaatst is het onze taak om uw pakket bij u te laten bezorgen. Wij maken gebruik van de diensten van DHL voor het uitvoeren van de leveringen. Het is daarvoor noodzakelijk dat wij uw naam, adres en woonplaatsgegevens met DHL delen. DHL gebruikt deze gegevens alleen ten behoeve van het uitvoeren van de overeenkomst. In het geval dat DHL onderaannemers inschakelt, stelt DHL uw gegevens ook aan deze partijen ter beschikking.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_verzenddienst_gls') == '1' ) :?>
+        <div>
+            <h3>GLS</h3>
+            <p>Als u een bestelling bij ons plaatst is het onze taak om uw pakket bij u te laten bezorgen. Wij maken gebruik van de diensten van GLS voor het uitvoeren van de leveringen. Het is daarvoor noodzakelijk dat wij uw naam, adres en woonplaatsgegevens met GLS delen. GLS gebruikt deze gegevens alleen ten behoeve van het uitvoeren van de overeenkomst. In het geval dat GLS onderaannemers inschakelt, stelt GLS uw gegevens ook aan deze partijen ter beschikking.</p>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<div class="boekhouding">
+
+    <?php if ( get_option('integratie_orderbevestiging_exact') == '1' ) :?>
+        <div>
+            <h3>Exact</h3>
+            <p>Voor onze bijhouden van onze administratie en boekhouding maken wij gebruik van de diensten van Exact. Wij delen uw naam, adres en woonplaatsgegevens en details met betrekking tot uw bestelling. Deze gegevens worden gebruikt voor het administreren van verkoopfacturen. Uw persoonsgegevens worden beschermd verzonden en opgeslagen, Exact heeft de nodige technische en organisatorische maatregelen getroffen om uw gegevens te beschermen tegen verlies en ongeoorloofd gebruik. Exact is tot geheimhouding verplicht en zal uw gegevens vertrouwelijk behandelen. Exact gebruikt uw persoonsgegevens niet voor andere doeleinden dan hierboven beschreven.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_orderbevestiging_moneybird') == '1' ) :?>
+        <div>
+            <h3>MoneyBird</h3>
+            <p>Voor onze bijhouden van onze administratie en boekhouding maken wij gebruik van de diensten van MoneyBird. Wij delen uw naam, adres en woonplaatsgegevens en details met betrekking tot uw bestelling. Deze gegevens worden gebruikt voor het administreren van verkoopfacturen. Uw persoonsgegevens worden beschermd verzonden en opgeslagen, MoneyBird heeft de nodige technische en organisatorische maatregelen getroffen om uw gegevens te beschermen tegen verlies en ongeoorloofd gebruik. MoneyBird is tot geheimhouding verplicht en zal uw gegevens vertrouwelijk behandelen. MoneyBird gebruikt uw persoonsgegevens niet voor andere doeleinden dan hierboven beschreven.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_orderbevestiging_factuursturen') == '1' ) :?>
+        <div>
+            <h3>FactuurSturen</h3>
+            <p>Voor onze bijhouden van onze administratie en boekhouding maken wij gebruik van de diensten van FactuurSturen. Wij delen uw naam, adres en woonplaatsgegevens en details met betrekking tot uw bestelling. Deze gegevens worden gebruikt voor het administreren van verkoopfacturen. Uw persoonsgegevens worden beschermd verzonden en opgeslagen. FactuurSturen is tot geheimhouding verplicht en zal uw gegevens vertrouwelijk behandelen. FactuurSturen gebruikt uw persoonsgegevens niet voor andere doeleinden dan hierboven beschreven.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_orderbevestiging_gripp') == '1' ) :?>
+        <div>
+            <h3>Gripp</h3>
+            <p></p>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<div class="externe-verkoop">
+
+    <?php if ( get_option('integratie_externverkoop_bol') == '1' ) :?>
+        <div>
+            <h3>Bol.com</h3>
+            <p>Wij verkopen (een deel van) onze artikelen via het platform van Bol.com. Als u via dit platform een bestelling plaatst dan deelt Bol.com uw bestel- en persoonsgegevens met ons. Wij gebruiken deze gegevens om uw bestelling af te handelen. Wij gaan vertrouwelijk met uw gegevens om en hebben passende technische en organisatorische maatregelen getroffen om uw gegevens te beschermen tegen verlies en ongeoorloofd gebruik.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_externverkoop_marktplaats') == '1' ) :?>
+        <div>
+            <h3>Marktplaats</h3>
+            <p>Wij verkopen (een deel van) onze artikelen via het platform van Marktplaats.nl. Als u via dit platform een bestelling plaatst dan deelt Marktplaats.nl uw bestel- en persoonsgegevens met ons. Wij gebruiken deze gegevens om uw bestelling af te handelen. Wij gaan vertrouwelijk met uw gegevens om en hebben passende technische en organisatorische maatregelen getroffen om uw gegevens te beschermen tegen verlies en ongeoorloofd gebruik.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( get_option('integratie_externverkoop_beslist') == '1' ) :?>
+        <div>
+            <h3>Beslist</h3>
+            <p>Wij verkopen (een deel van) onze artikelen via het platform van Beslist.nl. Als u via dit platform een bestelling plaatst dan deelt Beslist.nl uw bestel- en persoonsgegevens met ons. Wij gebruiken deze gegevens om uw bestelling af te handelen. Wij gaan vertrouwelijk met uw gegevens om en hebben passende technische en organisatorische maatregelen getroffen om uw gegevens te beschermen tegen verlies en ongeoorloofd gebruik.</p>
+        </div>
+    <?php endif; ?>
+
 </div>
 
 <div class="privacy-beveiliging">

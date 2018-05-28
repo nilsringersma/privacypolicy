@@ -172,5 +172,38 @@ class Privacypolicy_Admin {
         register_setting( 'privacypolicy-settings-group', 'cookies_analytics' );
         register_setting( 'privacypolicy-settings-group', 'cookies_socialmedia' );
 
+        register_setting( 'privacypolicy-settings-group', 'integratie_orderbevestiging_exact' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_orderbevestiging_moneybird' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_orderbevestiging_factuursturen' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_orderbevestiging_gripp' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_orderbevestiging_woocommerce' );
+
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_gmail' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_hotmail' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_office365' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_webreact' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_hostnet' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_bedrijfsmail_anders' );
+
+        register_setting( 'privacypolicy-settings-group', 'integratie_review_kiyoh' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_review_feedbackcompany' );
+
+        register_setting( 'privacypolicy-settings-group', 'integratie_paymentprovider_mollie' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_paymentprovider_paynl' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_paymentprovider_klarna' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_paymentprovider_multisafepay' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_paymentprovider_afterpay' );
+
+        register_setting( 'privacypolicy-settings-group', 'integratie_verzenddienst_postnl' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_verzenddienst_dhl' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_verzenddienst_gls' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_verzenddienst_anders' );
+
+        register_setting( 'privacypolicy-settings-group', 'integratie_externverkoop_bol' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_externverkoop_marktplaats' );
+        register_setting( 'privacypolicy-settings-group', 'integratie_externverkoop_beslist' );
+
+        register_setting( 'privacypolicy-settings-group', 'show_form_title' );
+
     }
 }
